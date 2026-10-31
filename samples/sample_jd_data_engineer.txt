@@ -1,0 +1,28 @@
+Job Title: Data Engineer (Platform & Lakehouse)
+Company: NexusCloud Commerce India
+Location: Bengaluru, Karnataka (Hybrid)
+Job Posting URL: https://careers.nexuscloud.example.com/jobs/data-engineer-2026
+
+About the Role:
+We are looking for a Data Engineer to design, build, and scale reliable data pipelines and lakehouse tables powering our real-time supply chain and merchant analytics platform.
+
+Mandatory Requirements:
+- Strong proficiency in Python and advanced SQL for data transformation and analytical query optimization.
+- Hands-on experience designing and maintaining ETL/ELT workflows and production Data Pipelines.
+- Practical knowledge of distributed data processing using Apache Spark.
+- Solid understanding of Data Warehousing principles, dimensional modeling, and cloud storage on AWS.
+- Experience with Git version control and collaborative engineering workflows.
+- Strong Communication Skills and structured Problem Solving ability.
+
+Preferred Qualifications:
+- Experience with Databricks, Delta Lake, or Microsoft Azure data services.
+- Familiarity with workflow orchestration tools such as Apache Airflow and event streaming with Kafka.
+- Exposure to Snowflake or BigQuery for cloud analytics.
+
+Optional / Bonus Skills:
+- Containerization using Docker and Infrastructure as Code with Terraform.
+
+Key Responsibilities:
+- Build, schedule, and monitor scalable batch and streaming ETL/ELT pipelines in Python and Apache Spark.
+- Collaborate with data scientists and product analysts to deliver clean, documented datasets in the data warehouse.
+- Optimize SQL performance, enforce data quality checks, and maintain high pipeline reliability.
