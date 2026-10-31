@@ -1,0 +1,6 @@
+{
+  "name": "CareerMatch AI",
+  "description": "AI-powered career readiness and semantic skill-gap intelligence platform for students and job seekers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

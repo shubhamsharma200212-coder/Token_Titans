@@ -1,0 +1,37 @@
+Aarav Sharma
+Email: aarav.sharma@iitb.ac.in | Phone: +91 98765 43210 | Location: Bengaluru, India
+LinkedIn: linkedin.com/in/aaravsharma-cs | GitHub: github.com/aaravsharma-dev
+
+EDUCATION
+B.Tech in Computer Science and Engineering — Indian Institute of Information Technology (2022 – 2026)
+CGPA: 8.64 / 10.0
+Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Statistics and Probability
+
+TECHNICAL SKILLS
+Programming Languages: Python, SQL, Java, JavaScript, Bash
+Frameworks & Libraries: Pandas, NumPy, Scikit-learn, Flask, FastAPI, React
+Databases: PostgreSQL, MySQL, SQLite
+Cloud & DevOps: AWS, Docker, Git, GitHub, Linux
+Core Competencies: REST APIs, ETL/ELT, Data Pipelines, Data Visualization, Excel, Testing and Debugging, Problem Solving, Communication Skills
+
+INTERNSHIPS & WORK EXPERIENCE
+Data Engineering & Analytics Intern — FinEdge Analytics Pvt. Ltd., Bengaluru (May 2025 – July 2025)
+- Built automated Python and SQL ETL/ELT data pipelines ingesting 1.2M daily financial transactions into PostgreSQL.
+- Reduced nightly batch query runtime by 38% through composite indexing and query refactoring.
+- Collaborated with product analysts to publish KPI summaries and automated anomaly reports.
+
+ACADEMIC & PERSONAL PROJECTS
+1. Project: Real-Time E-Commerce Order Analytics & Fraud Scoring API
+- Built a REST API using Python, FastAPI, PostgreSQL, and Docker to score incoming orders with a Scikit-learn gradient boosting model.
+- Implemented JWT authentication, automated pytest unit tests, and structured logging.
+
+2. Project: Automated Campus Placement & Skill Tracker Dashboard
+- Developed a full-stack analytics web application using React, Python (Flask), and MySQL to track cohort placement trends and SQL assessment scores.
+
+CERTIFICATIONS
+- AWS Certified Cloud Practitioner (2025)
+- SQL for Data Science — Coursera / UC Davis (2024)
+
+ACHIEVEMENTS
+- Smart India Hackathon (SIH) 2025 — National Grand Finale Top 5 Finalist
+- Solved 420+ Data Structures and Algorithms problems across LeetCode and Codeforces
