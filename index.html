@@ -1,24 +1,519 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b1020" />
-    <title>CareerMatch AI — Your Career, Decoded</title>
-    <meta name="description" content="AI-powered career readiness and semantic skill-gap intelligence platform for students and job seekers." />
-    <meta property="og:title" content="CareerMatch AI — Your Career, Decoded" />
-    <meta property="og:description" content="AI-powered career readiness and semantic skill-gap intelligence platform for students and job seekers." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareerMatch AI — AI-Powered Career Readiness &amp; Skill Gap Platform</title>
+  <meta name="description" content="AI-powered resume analyzer, skill gap detector, interactive career roadmap, and course recommender built with HTML, CSS, Vanilla JS, Python FastAPI, SQLite, and Google Gemini." />
+  <meta property="og:title" content="CareerMatch AI — AI-Powered Career Readiness &amp; Skill Gap Platform" />
+  <meta property="og:description" content="Analyze your resume against real industry roles, uncover missing skills, and follow a personalized roadmap with Free and Paid courses." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/frontend/css/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">✳</span>
+      <span>career<span class="brand-accent">match</span><sup>AI</sup></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#analyzer">Analyzer</a>
+      <a href="#results" id="navResultsLink" class="hidden">Career Report</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:0.6rem;">
+      <a href="#analyzer" class="nav-cta">Analyze resume ↗</a>
+      <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#analyzer" class="mobile-link">Resume Analyzer</a>
+    <a href="#results" class="mobile-link">Career Report</a>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span> AI CAREER READINESS PLATFORM
+        </div>
+        <h1>
+          Your next career move<br />
+          starts <span class="gradient-text">with clarity.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Match your resume against real roles, uncover missing skills, and follow a personalized learning roadmap with Free and Paid courses.
+        </p>
+        <div class="hero-actions">
+          <a href="#analyzer" class="button button-primary">Analyze my resume ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="dashboard-card">
+          <div class="mock-top">
+            <div>
+              <span class="tiny-label">CANDIDATE SNAPSHOT</span>
+              <h3 id="heroCandidateName">Upload a resume to see your match</h3>
+            </div>
+            <span class="status-pill" id="heroStatusPill">Empty</span>
+          </div>
+
+          <div id="heroEmptyState" style="padding:1.5rem 0;text-align:center;">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📄</div>
+            <p style="margin:0 0 1rem;font-size:0.9rem;color:var(--text-muted);">
+              Upload a resume to see your match, skill gaps, and personalized roadmap.
+            </p>
+            <a href="#analyzer" class="demo-btn" style="display:inline-block;text-decoration:none;">Upload a resume below ↓</a>
+          </div>
+
+          <div id="heroLiveSnapshot" class="hidden">
+            <div class="score-row">
+              <div class="score-ring" id="heroScoreRing" style="background: conic-gradient(#8b5cf6 0% 0%, rgba(255,255,255,0.08) 0% 100%);">
+                <div>
+                  <strong class="tabular-nums"><b id="heroScoreNum">0</b><span>%</span></strong>
+                  <small>match</small>
+                </div>
+              </div>
+              <div class="score-copy">
+                <strong id="heroRoleTitle">—</strong>
+                <p id="heroCompanyTitle">—</p>
+                <span class="positive" id="heroPotentialText"></span>
+              </div>
+            </div>
+
+            <div class="mini-divider"></div>
+
+            <div class="skill-head">
+              <span>SKILL ALIGNMENT</span>
+              <span class="tabular-nums" id="heroSkillCount">0 matched</span>
+            </div>
+
+            <div id="heroSkillBars"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip section-wrap">
+      <span>POWERED BY PYTHON FASTAPI · SQLITE · GOOGLE GEMINI</span>
+      <div class="trust-items">
+        <span>✳ PDF &amp; DOCX Parsing</span>
+        <span>◈ Skill Gap Analysis</span>
+        <span>⌁ Interactive Roadmap</span>
+        <span>↗ Free &amp; Paid Courses</span>
+      </div>
+    </section>
+
+
+    <!-- MODULE 2: RESUME & JOB ANALYZER -->
+    <section class="analyzer-section" id="analyzer">
+      <div class="section-wrap analyzer-layout">
+        <div class="analyzer-intro">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> RESUME &amp; ROLE ANALYZER</div>
+          <h2>Let’s map your<br /><span class="gradient-text">next career step.</span></h2>
+          <p>Upload a PDF, DOCX, or TXT resume—or test immediately using an optional sample student profile below.</p>
+
+          <!-- Optional Demo Profiles -->
+          <div class="demo-box">
+            <b style="font-size:0.9rem;display:block;">Optional: Test with a sample student profile</b>
+            <small style="color:var(--text-muted);font-size:0.8rem;">Select a profile below to run a live analysis:</small>
+            <div class="demo-buttons" id="demoButtonsContainer"></div>
+          </div>
+
+          <!-- Live Selected Identity Preview -->
+          <div class="identity-spotlight-grid" style="margin-bottom:0;">
+            <div class="spotlight-card spotlight-candidate" style="padding:1rem;">
+              <span class="spotlight-label green-text">Candidate</span>
+              <div style="font-weight:700;font-size:1.05rem;" id="previewCandidateName">Not loaded yet</div>
+            </div>
+            <div class="spotlight-card spotlight-role" style="padding:1rem;">
+              <span class="spotlight-label purple-text">Target Role</span>
+              <div style="font-weight:700;font-size:1.05rem;" id="previewRoleName">Full Stack Developer</div>
+            </div>
+            <div class="spotlight-card spotlight-company" style="padding:1rem;">
+              <span class="spotlight-label sky-text">Goal Company</span>
+              <div style="font-weight:700;font-size:1.05rem;" id="previewCompanyName">Industry Benchmark</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="analyzer-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="tiny-label">CAREER MATCH ENGINE</span>
+              <h3>Build your career report</h3>
+            </div>
+            <span class="panel-step">LIVE</span>
+          </div>
+
+          <form id="analyzerForm">
+            <div class="field-label">
+              <span>Resume (PDF, DOCX, TXT)</span>
+              <button type="button" class="link-btn" id="togglePasteBtn">Or paste resume text</button>
+            </div>
+
+            <label class="upload-zone" id="uploadZone" for="resumeFileInput">
+              <input type="file" id="resumeFileInput" accept=".pdf,.docx,.txt" />
+              <span class="upload-icon">↑</span>
+              <strong id="uploadTitle">Drop your resume here</strong>
+              <small style="color:var(--text-muted);font-size:0.8rem;margin-top:0.2rem;">or <u>browse files</u> (Max 10 MB)</small>
+            </label>
+
+            <textarea
+              id="pastedResumeInput"
+              class="input-control hidden"
+              rows="4"
+              placeholder="Paste your resume text (education, skills, projects, experience)..."
+            ></textarea>
+
+            <div id="uploadStatusMsg" style="margin-top:0.6rem;font-size:0.8rem;color:#34d399;font-weight:600;"></div>
+
+            <label class="field-label" for="roleSelect">
+              Target Role <span>8 INDUSTRY ROLES</span>
+            </label>
+            <select id="roleSelect" class="input-control"></select>
+
+            <div class="field-label">
+              <span>Goal Company &amp; Custom Job Description</span>
+              <button type="button" class="link-btn" id="loadSampleJdBtn">Load sample Data Engineer JD</button>
+            </div>
+            <div class="two-col-inputs">
+              <input
+                type="text"
+                id="goalCompanyInput"
+                class="input-control"
+                maxlength="100"
+                placeholder="Goal company (e.g. Google, Stripe, Razorpay)"
+              />
+              <input
+                type="url"
+                id="jobUrlInput"
+                class="input-control"
+                maxlength="300"
+                placeholder="Job posting URL (optional)"
+              />
+            </div>
+
+            <textarea
+              id="customJdInput"
+              class="input-control"
+              rows="2"
+              placeholder="Optional: Paste a specific job description to override the role template..."
+            ></textarea>
+
+            <label style="display:flex;align-items:center;gap:0.55rem;margin-top:0.95rem;font-size:0.82rem;color:#cbd5e1;cursor:pointer;">
+              <input type="checkbox" id="dontSaveResumeCheckbox" style="width:16px;height:16px;accent-color:#8b5cf6;cursor:pointer;" />
+              <span>Don't save my resume (skip saving to SQLite database)</span>
+            </label>
+
+            <button type="submit" class="button button-primary" style="width:100%;margin-top:1.1rem;" id="analyzeSubmitBtn">
+              Generate career report ↗
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 3–6: RESULTS & AI CAREER INTELLIGENCE HUB -->
+    <section class="section-wrap section-space hidden" id="results">
+      <div class="results-header">
+        <div>
+          <div class="eyebrow">PERSONALIZED CAREER REPORT</div>
+          <h2>Your roadmap is <span class="gradient-text">ready.</span></h2>
+        </div>
+        <span class="panel-step" id="reportStatusBadge">VERIFIED REPORT</span>
+      </div>
+
+      <!-- HIGH-CONTRAST SPOTLIGHT BAR: CANDIDATE NAME, TARGET ROLE, GOAL COMPANY -->
+      <div class="identity-spotlight-grid">
+        <!-- 1. Candidate / Resume Name -->
+        <div class="spotlight-card spotlight-candidate">
+          <div class="spotlight-top">
+            <span class="spotlight-label green-text">● Candidate Profile</span>
+            <span class="spotlight-badge" id="spotSkillCountBadge">0 Skills</span>
+          </div>
+          <div class="spotlight-value" id="spotCandidateName">—</div>
+          <div class="spotlight-sub">
+            <span id="spotFilename">resume.pdf</span>
+            <button type="button" class="link-btn" id="jumpEditSkillsBtn">Edit skills ↗</button>
+          </div>
+        </div>
+
+        <!-- 2. Target Role (Interactive Switcher) -->
+        <div class="spotlight-card spotlight-role">
+          <div class="spotlight-top">
+            <span class="spotlight-label purple-text">● Target Role</span>
+            <span class="spotlight-badge">Quick Switch</span>
+          </div>
+          <div class="spotlight-value" id="spotTargetRole">—</div>
+          <div>
+            <select id="spotRoleSwitcher" class="input-control" style="padding:0.45rem 0.75rem;font-size:0.78rem;"></select>
+          </div>
+        </div>
+
+        <!-- 3. Goal Company (Interactive Inline Editor) -->
+        <div class="spotlight-card spotlight-company">
+          <div class="spotlight-top">
+            <span class="spotlight-label sky-text">● Goal Company</span>
+            <button type="button" class="spotlight-badge" id="toggleEditCompanyBtn" style="border:none;cursor:pointer;">Change</button>
+          </div>
+          <div class="spotlight-value" id="spotGoalCompany">Industry Benchmark</div>
+          <div id="spotCompanyEditBox" class="hidden" style="margin-top:0.35rem;">
+            <input type="text" id="spotCompanyInput" class="input-control" style="padding:0.45rem 0.7rem;font-size:0.82rem;margin-bottom:0.4rem;" placeholder="Enter goal company..." />
+            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;">
+              <button type="button" class="demo-btn company-preset-btn" style="padding:0.22rem 0.55rem;font-size:0.7rem;" data-company="Google">Google</button>
+              <button type="button" class="demo-btn company-preset-btn" style="padding:0.22rem 0.55rem;font-size:0.7rem;" data-company="Microsoft">Microsoft</button>
+              <button type="button" class="demo-btn company-preset-btn" style="padding:0.22rem 0.55rem;font-size:0.7rem;" data-company="Amazon">Amazon</button>
+              <button type="button" class="demo-btn company-preset-btn" style="padding:0.22rem 0.55rem;font-size:0.7rem;" data-company="Razorpay">Razorpay</button>
+            </div>
+          </div>
+          <div class="spotlight-sub" id="spotCompanySub">
+            <span>Target Organization</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP 3 SUMMARY SCORE CARDS -->
+      <div class="results-grid">
+        <article class="result-card">
+          <span class="tiny-label">OVERALL COMPATIBILITY</span>
+          <div class="big-score tabular-nums"><strong id="resOverallScore">0</strong><span>%</span></div>
+          <div class="score-track"><i id="resScoreBar" style="width:0%"></i></div>
+          <div style="font-size:0.8rem;color:var(--text-muted);" id="resMandatorySummary"></div>
+        </article>
+
+        <article class="result-card">
+          <span class="tiny-label">MATCHED SKILLS</span>
+          <div class="result-number green-text tabular-nums" id="resMatchedCount">00</div>
+          <div class="chip-list" id="resMatchedChips"></div>
+        </article>
+
+        <article class="result-card">
+          <span class="tiny-label">SKILLS TO BUILD</span>
+          <div class="result-number purple-text tabular-nums" id="resMissingCount">00</div>
+          <div class="chip-list missing-chips" id="resMissingChips"></div>
+        </article>
+      </div>
+
+      <!-- NAVIGATION TABS -->
+      <div class="tabs-bar">
+        <button type="button" class="tab-btn active" data-tab="tab-roadmap">01. Detailed Career Roadmap</button>
+        <button type="button" class="tab-btn" data-tab="tab-gaps">02. Skill Gaps &amp; Evidence</button>
+        <button type="button" class="tab-btn" data-tab="tab-simulator">03. Score Simulator &amp; Resume AI</button>
+        <button type="button" class="tab-btn" data-tab="tab-compare">04. Role Comparison</button>
+        <button type="button" class="tab-btn" data-tab="tab-skills">05. Edit Skills</button>
+      </div>
+
+      <!-- TAB 1: DETAILED CAREER ROADMAP & COURSES -->
+      <div class="tab-pane" id="tab-roadmap">
+        <div class="result-card" style="margin-bottom:1.75rem;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;padding-bottom:1.15rem;border-bottom:1px solid var(--border-subtle);margin-bottom:1.25rem;">
+            <div>
+              <span class="tiny-label">PERSONALIZED SKILL MAP</span>
+              <h3 style="margin:0.2rem 0 0;font-size:1.4rem;" id="roadmapRoleHeading">Interactive Career Roadmap</h3>
+              <p style="margin:0.2rem 0 0;font-size:0.8rem;color:var(--text-muted);">Click any skill node to inspect key topics, practice tasks, and Free or Paid courses.</p>
+            </div>
+            <div style="text-align:right;">
+              <span class="tiny-label">ROADMAP MASTERY</span>
+              <strong class="green-text tabular-nums" style="font-size:1.5rem;" id="roadmapMasteryLabel">0%</strong>
+            </div>
+          </div>
+
+          <div class="progress-track"><i id="roadmapMasteryBar" style="width:0%"></i></div>
+
+          <div class="roadmap-split" style="margin-top:1.5rem;">
+            <!-- Left: Visual Skill Tree -->
+            <div class="roadmap-tree-container" id="roadmapTreeContainer"></div>
+
+            <!-- Right: Sticky Node Inspector -->
+            <div class="node-inspector" id="nodeInspector"></div>
+          </div>
+        </div>
+
+        <!-- Online Courses Directory (Free & Paid) + Verified Practice Websites -->
+        <div class="result-card" style="margin-bottom:1.75rem;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;padding-bottom:1.15rem;border-bottom:1px solid var(--border-subtle);margin-bottom:1.25rem;">
+            <div>
+              <span class="tiny-label">VERIFIED LEARNING PATHS</span>
+              <h3 style="margin:0.2rem 0 0;font-size:1.35rem;">Online Courses (Free &amp; Paid)</h3>
+            </div>
+            <div style="display:flex;gap:0.45rem;" id="courseFilterBar">
+              <button type="button" class="demo-btn active" data-filter="ALL">All Courses</button>
+              <button type="button" class="demo-btn" data-filter="Free">Free Only</button>
+              <button type="button" class="demo-btn" data-filter="Paid">Paid &amp; Certified</button>
+            </div>
+          </div>
+
+          <!-- Search Custom Course Topic with Gemini -->
+          <form id="customCourseForm" style="display:flex;flex-wrap:wrap;gap:0.65rem;margin-bottom:1.35rem;">
+            <input
+              type="text"
+              id="customCourseInput"
+              class="input-control"
+              style="flex:1;min-width:220px;"
+              placeholder="Ask Gemini for courses on a specific topic (e.g. Apache Spark, System Design, AWS)..."
+            />
+            <button type="submit" class="button button-primary" style="padding:0.7rem 1.2rem;font-size:0.84rem;" id="customCourseBtn">
+              Find Courses ↗
+            </button>
+          </form>
+
+          <div class="dynamic-cards-grid" id="coursesGrid"></div>
+
+          <!-- Verified Practice Websites, Sandboxes & Study Materials -->
+          <div style="margin-top:1.85rem;padding-top:1.5rem;border-top:1px solid var(--border-subtle);">
+            <span class="tiny-label sky-text" style="margin-bottom:0.85rem;">VERIFIED PRACTICE WEBSITES, SANDBOXES &amp; STUDY MATERIALS</span>
+            <div class="dynamic-cards-grid" id="websitesGrid"></div>
+          </div>
+        </div>
+
+        <!-- 3-Stage Action Plan & Recommended Portfolio Projects -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;align-items:start;">
+          <div class="result-card">
+            <span class="tiny-label">MILESTONE CHECKLIST</span>
+            <h3 style="margin:0.25rem 0 1rem;">3-Stage Learning Plan</h3>
+            <div id="stagesContainer" style="display:grid;gap:0.85rem;"></div>
+          </div>
+
+          <div class="result-card">
+            <span class="tiny-label">PORTFOLIO BUILDER</span>
+            <h3 style="margin:0.25rem 0 1rem;">Recommended Projects</h3>
+            <div id="projectsContainer" style="display:grid;gap:0.85rem;"></div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.75rem;">
+              <button type="button" class="button button-secondary" style="flex:1;margin-top:0;" onclick="window.print()">Print / Save PDF ↗</button>
+              <button type="button" class="button button-secondary" style="flex:1;margin-top:0;" id="downloadJsonReportBtn">Download JSON ↗</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: SKILL GAPS & EVIDENCE -->
+      <div class="tab-pane hidden" id="tab-gaps">
+        <div class="result-card" style="margin-bottom:1.5rem;">
+          <span class="tiny-label">PRIORITY SKILL GAPS</span>
+          <h3 style="margin:0.25rem 0 1rem;">Skills to Build (Click any card to expand details)</h3>
+          <div class="dynamic-cards-grid" id="gapsCardsGrid"></div>
+        </div>
+
+        <div class="result-card">
+          <span class="tiny-label">RESUME &amp; JD PROOF</span>
+          <h3 style="margin:0.25rem 0 1rem;">All Requirements with JD Quotes &amp; Resume Proof</h3>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Requirement</th>
+                  <th>Status</th>
+                  <th>JD Quote</th>
+                  <th>Resume Proof</th>
+                </tr>
+              </thead>
+              <tbody id="evidenceTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: SCORE SIMULATOR & RESUME AI -->
+      <div class="tab-pane hidden" id="tab-simulator">
+        <div class="result-card" style="margin-bottom:1.5rem;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border-subtle);margin-bottom:1.25rem;">
+            <div>
+              <span class="tiny-label">WHAT-IF SCORE SIMULATOR</span>
+              <h3 style="margin:0.2rem 0 0;">Preview Your Score After Learning New Skills</h3>
+            </div>
+            <div style="text-align:right;">
+              <span class="tiny-label">PROJECTED MATCH</span>
+              <strong class="green-text tabular-nums" style="font-size:2rem;" id="simProjectedScore">0%</strong>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;align-items:start;">
+            <div>
+              <span class="tiny-label" style="margin-bottom:0.65rem;">TOGGLE SKILLS TO SIMULATE</span>
+              <div id="simSkillToggles" style="display:grid;gap:0.55rem;"></div>
+            </div>
+            <div>
+              <span class="tiny-label" style="margin-bottom:0.65rem;">PROJECTED PROGRESSION</span>
+              <div id="simProgressionBars"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <span class="tiny-label">GEMINI RESUME ASSISTANT</span>
+          <h3 style="margin:0.25rem 0 1rem;">Resume Improvement Suggestions</h3>
+          <div class="dynamic-cards-grid" id="improvementsGrid"></div>
+        </div>
+      </div>
+
+      <!-- TAB 4: MULTI-ROLE COMPARISON -->
+      <div class="tab-pane hidden" id="tab-compare">
+        <div class="result-card" style="margin-bottom:1.5rem;">
+          <span class="tiny-label">MULTI-ROLE COMPARISON</span>
+          <h3 style="margin:0.25rem 0 1rem;">Your Compatibility Across All 8 Tech Roles</h3>
+          <div class="dynamic-cards-grid" id="roleCompareGrid"></div>
+        </div>
+      </div>
+
+      <!-- TAB 5: EDIT EXTRACTED SKILLS -->
+      <div class="tab-pane hidden" id="tab-skills">
+        <div class="result-card" style="margin-bottom:1.5rem;">
+          <span class="tiny-label">SQLITE SKILL EDITOR</span>
+          <h3 style="margin:0.25rem 0 0.5rem;">Verify &amp; Edit Candidate Skills</h3>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin:0 0 1rem;">Add or remove skills to update your SQLite profile and recalculate your career report.</p>
+
+          <form id="addSkillForm" style="display:flex;gap:0.6rem;max-width:440px;margin-bottom:1.25rem;">
+            <input type="text" id="newSkillInput" class="input-control" maxlength="60" placeholder="Add a skill (e.g. Apache Spark, Docker)..." />
+            <button type="submit" class="button button-primary" style="padding:0.65rem 1.1rem;font-size:0.82rem;white-space:nowrap;">+ Add Skill</button>
+          </form>
+
+          <div class="chip-list" id="editableSkillsList"></div>
+        </div>
+
+        <div class="result-card" style="margin-bottom:1.5rem;">
+          <span class="tiny-label">EXTRACTED RESUME SECTIONS</span>
+          <h3 style="margin:0.25rem 0 1rem;">Parsed Education, Work Experience, Projects &amp; Certifications</h3>
+          <div class="dynamic-cards-grid" id="parsedResumeDetailsGrid"></div>
+        </div>
+
+        <div class="expandable-card" id="rawTextExpandCard">
+          <button type="button" class="expandable-trigger" id="toggleRawTextBtn">
+            <div>
+              <span class="tiny-label">SOURCE TRACEABILITY</span>
+              <b style="font-size:1rem;">View Extracted Raw Resume Text</b>
+            </div>
+            <span class="expandable-chevron">▼</span>
+          </button>
+          <div class="expandable-content hidden" id="rawTextExpandBody">
+            <pre id="rawResumeTextPre" style="margin:0;padding:1rem;border-radius:0.85rem;background:#070b16;font-size:0.78rem;white-space:pre-wrap;color:#cbd5e1;max-height:280px;overflow-y:auto;"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap">
+    <a class="brand" href="#home">
+      <span class="brand-mark">✳</span>
+      <span>career<span class="brand-accent">match</span><sup>AI</sup></span>
+    </a>
+    <span>HTML + CSS + Vanilla JS · Python + FastAPI · SQLite · Google Gemini</span>
+    <span>© 2026 CareerMatch AI</span>
+  </footer>
+
+  <script src="/frontend/js/app.js"></script>
+</body>
 </html>
