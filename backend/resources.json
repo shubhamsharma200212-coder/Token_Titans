@@ -1,0 +1,450 @@
+{
+  "Python": {
+    "subtopics": ["Data structures, generators & type hints", "Virtual environments & pytest testing", "Async I/O & modular packaging"],
+    "freeCourse": {
+      "title": "Scientific Computing with Python",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/"
+    },
+    "paidCourse": {
+      "title": "Python for Everybody Specialization",
+      "platform": "Coursera (University of Michigan)",
+      "priceNote": "Paid Certificate (Free Audit)",
+      "url": "https://www.coursera.org/specializations/python"
+    }
+  },
+  "SQL": {
+    "subtopics": ["Window functions (ROW_NUMBER, LAG/LEAD)", "CTEs, query plans & composite indexing", "ACID transactions & schema normalization"],
+    "freeCourse": {
+      "title": "Intro to SQL & Advanced SQL",
+      "platform": "Kaggle Learn",
+      "url": "https://www.kaggle.com/learn/advanced-sql"
+    },
+    "paidCourse": {
+      "title": "SQL for Data Science",
+      "platform": "Coursera (UC Davis)",
+      "priceNote": "Paid Certificate (Free Audit)",
+      "url": "https://www.coursera.org/learn/sql-for-data-science"
+    }
+  },
+  "Java": {
+    "subtopics": ["OOP, Collections & Generics", "JVM memory model & concurrency", "Maven/Gradle build lifecycle"],
+    "freeCourse": {
+      "title": "Java Programming Basics (Dev.java)",
+      "platform": "Oracle Dev.java",
+      "url": "https://dev.java/learn/"
+    },
+    "paidCourse": {
+      "title": "Java Programming and Software Engineering Fundamentals",
+      "platform": "Coursera (Duke University)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/java-programming"
+    }
+  },
+  "JavaScript": {
+    "subtopics": ["Closures, event loop & Promises/async", "DOM manipulation & Fetch API", "ES6+ modules & array methods"],
+    "freeCourse": {
+      "title": "JavaScript Algorithms and Data Structures",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/"
+    },
+    "paidCourse": {
+      "title": "Programming with JavaScript",
+      "platform": "Coursera (Meta)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/programming-with-javascript"
+    }
+  },
+  "TypeScript": {
+    "subtopics": ["Strict types, generics & utility types", "Discriminated unions & type narrowing", "Typed API request/response contracts"],
+    "freeCourse": {
+      "title": "Build JavaScript Applications with TypeScript",
+      "platform": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/paths/build-javascript-applications-typescript/"
+    },
+    "paidCourse": {
+      "title": "Understanding TypeScript",
+      "platform": "Udemy",
+      "priceNote": "Paid Course",
+      "url": "https://www.udemy.com/course/understanding-typescript/"
+    }
+  },
+  "C++": {
+    "subtopics": ["RAII, pointers & smart pointers", "STL containers & algorithms", "Memory layout & compile-time optimization"],
+    "freeCourse": {
+      "title": "Learn C++ Official Interactive Tutorial",
+      "platform": "LearnCpp.com",
+      "url": "https://www.learncpp.com/"
+    },
+    "paidCourse": {
+      "title": "Coding for Everyone: C and C++ Specialization",
+      "platform": "Coursera (UC Santa Cruz)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/coding-for-everyone"
+    }
+  },
+  "React": {
+    "subtopics": ["Component state, Hooks & custom hooks", "Memoization & rendering performance", "Client routing & async API state"],
+    "freeCourse": {
+      "title": "Official React.dev Interactive Guide",
+      "platform": "React.dev",
+      "url": "https://react.dev/learn"
+    },
+    "paidCourse": {
+      "title": "Meta Front-End Developer Professional Certificate",
+      "platform": "Coursera (Meta)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer"
+    }
+  },
+  "Node.js": {
+    "subtopics": ["Event loop, streams & async patterns", "RESTful routing, middleware & auth", "Input validation & rate limiting"],
+    "freeCourse": {
+      "title": "Back End Development and APIs",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/"
+    },
+    "paidCourse": {
+      "title": "Developing Back-End Apps with Node.js and Express",
+      "platform": "Coursera (IBM)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/developing-backend-apps-with-nodejs-and-express"
+    }
+  },
+  "FastAPI": {
+    "subtopics": ["Pydantic schemas & dependency injection", "Async endpoints & OpenAPI docs", "Middleware, CORS & authentication"],
+    "freeCourse": {
+      "title": "FastAPI Official User Guide & Tutorial",
+      "platform": "FastAPI Docs",
+      "url": "https://fastapi.tiangolo.com/tutorial/"
+    },
+    "paidCourse": {
+      "title": "FastAPI - The Complete Course",
+      "platform": "Udemy",
+      "priceNote": "Paid Course",
+      "url": "https://www.udemy.com/course/fastapi-the-complete-course/"
+    }
+  },
+  "Django": {
+    "subtopics": ["ORM models, migrations & QuerySets", "Django REST Framework serializers & views", "Authentication, permissions & CSRF protection"],
+    "freeCourse": {
+      "title": "Writing Your First Django App (Official Tutorial)",
+      "platform": "Django Documentation",
+      "url": "https://docs.djangoproject.com/en/5.0/intro/tutorial01/"
+    },
+    "paidCourse": {
+      "title": "Django for Everybody Specialization",
+      "platform": "Coursera (University of Michigan)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/django"
+    }
+  },
+  "Flask": {
+    "subtopics": ["Blueprints, routing & Jinja templates", "SQLAlchemy integration & migrations", "Request context & error handlers"],
+    "freeCourse": {
+      "title": "Official Flask Tutorial (Flaskr)",
+      "platform": "Pallets Projects",
+      "url": "https://flask.palletsprojects.com/en/stable/tutorial/"
+    },
+    "paidCourse": {
+      "title": "REST APIs with Flask and Python",
+      "platform": "Udemy",
+      "priceNote": "Paid Course",
+      "url": "https://www.udemy.com/course/rest-api-flask-and-python/"
+    }
+  },
+  "Spring Boot": {
+    "subtopics": ["Spring IoC, Beans & auto-configuration", "Spring Data JPA & Hibernate", "Spring Security & REST controllers"],
+    "freeCourse": {
+      "title": "Building an Application with Spring Boot",
+      "platform": "Spring.io Guides",
+      "url": "https://spring.io/guides/gs/spring-boot"
+    },
+    "paidCourse": {
+      "title": "Spring Framework Specialization",
+      "platform": "Coursera (LearnQuest)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/spring-framework"
+    }
+  },
+  "HTML/CSS": {
+    "subtopics": ["Semantic HTML5 & accessibility (ARIA)", "CSS Grid, Flexbox & responsive media queries", "CSS custom properties & layout performance"],
+    "freeCourse": {
+      "title": "Responsive Web Design Certification",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+    },
+    "paidCourse": {
+      "title": "HTML and CSS in Depth",
+      "platform": "Coursera (Meta)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/html-and-css-in-depth"
+    }
+  },
+  "REST APIs": {
+    "subtopics": ["HTTP methods, status codes & idempotency", "Pagination, filtering & OpenAPI specs", "Rate limiting, CORS & error payloads"],
+    "freeCourse": {
+      "title": "HTTP & Web APIs Guide",
+      "platform": "MDN Web Docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+    },
+    "paidCourse": {
+      "title": "APIs (Meta Back-End Developer)",
+      "platform": "Coursera (Meta)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/apis"
+    }
+  },
+  "Git": {
+    "subtopics": ["Branching, merging & interactive rebasing", "Pull requests & code review workflows", "Resolving conflicts & git bisect"],
+    "freeCourse": {
+      "title": "Git and GitHub Introduction",
+      "platform": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-git/"
+    },
+    "paidCourse": {
+      "title": "Introduction to Git and GitHub",
+      "platform": "Coursera (Google)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/introduction-git-github"
+    }
+  },
+  "Docker": {
+    "subtopics": ["Multi-stage Dockerfiles & layer caching", "Non-root container security", "Docker Compose multi-service networking"],
+    "freeCourse": {
+      "title": "Introduction to Docker Containers",
+      "platform": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-docker-containers/"
+    },
+    "paidCourse": {
+      "title": "Docker & Kubernetes: The Practical Guide",
+      "platform": "Udemy",
+      "priceNote": "Paid Course",
+      "url": "https://www.udemy.com/course/docker-kubernetes-the-practical-guide/"
+    }
+  },
+  "Kubernetes": {
+    "subtopics": ["Pods, Deployments, Services & Ingress", "ConfigMaps, Secrets & RBAC policies", "Horizontal Pod Autoscaling & probes"],
+    "freeCourse": {
+      "title": "Learn Kubernetes Basics",
+      "platform": "Kubernetes Official Docs",
+      "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/"
+    },
+    "paidCourse": {
+      "title": "Introduction to Kubernetes (LFS158)",
+      "platform": "edX (Linux Foundation)",
+      "priceNote": "Paid Verified Certificate (Free Audit)",
+      "url": "https://www.edx.org/learn/kubernetes/the-linux-foundation-introduction-to-kubernetes"
+    }
+  },
+  "AWS": {
+    "subtopics": ["IAM least-privilege roles & VPC security", "S3 storage, Lambda & EC2 compute", "CloudWatch monitoring & cost controls"],
+    "freeCourse": {
+      "title": "AWS Cloud Practitioner Essentials",
+      "platform": "AWS Skill Builder",
+      "url": "https://explore.skillbuilder.aws/learn"
+    },
+    "paidCourse": {
+      "title": "AWS Cloud Solutions Architect Professional Certificate",
+      "platform": "Coursera (AWS)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/professional-certificates/aws-cloud-solutions-architect"
+    }
+  },
+  "CI/CD": {
+    "subtopics": ["Automated test & lint pipelines", "Artifact caching & container builds", "Staged deployments & rollback triggers"],
+    "freeCourse": {
+      "title": "Automate Workflows with GitHub Actions",
+      "platform": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/paths/automate-workflow-github-actions/"
+    },
+    "paidCourse": {
+      "title": "Continuous Integration and Continuous Delivery (CI/CD)",
+      "platform": "Coursera (IBM)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/continuous-integration-and-continuous-delivery-ci-cd"
+    }
+  },
+  "Linux": {
+    "subtopics": ["File permissions, processes & systemd", "Bash scripting, pipes & text processing", "SSH, networking & package management"],
+    "freeCourse": {
+      "title": "Introduction to Linux (LFS101)",
+      "platform": "edX (Linux Foundation)",
+      "url": "https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux"
+    },
+    "paidCourse": {
+      "title": "Hands-on Introduction to Linux Commands and Shell Scripting",
+      "platform": "Coursera (IBM)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting"
+    }
+  },
+  "Machine Learning": {
+    "subtopics": ["Supervised & unsupervised learning algorithms", "Cross-validation, regularization & feature engineering", "Precision/recall, ROC-AUC & model evaluation"],
+    "freeCourse": {
+      "title": "Intro to Machine Learning",
+      "platform": "Kaggle Learn",
+      "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+    },
+    "paidCourse": {
+      "title": "Machine Learning Specialization",
+      "platform": "Coursera (DeepLearning.AI & Stanford)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/machine-learning-introduction"
+    }
+  },
+  "Deep Learning": {
+    "subtopics": ["Backpropagation, optimizers & activation functions", "CNNs, RNNs & Transformer architectures", "Model training & GPU batching in PyTorch"],
+    "freeCourse": {
+      "title": "Intro to Deep Learning",
+      "platform": "Kaggle Learn",
+      "url": "https://www.kaggle.com/learn/intro-to-deep-learning"
+    },
+    "paidCourse": {
+      "title": "Deep Learning Specialization",
+      "platform": "Coursera (DeepLearning.AI)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/deep-learning"
+    }
+  },
+  "NLP": {
+    "subtopics": ["Tokenization, embeddings & attention mechanisms", "Fine-tuning pretrained Transformer models", "Evaluation metrics (BLEU, ROUGE, F1)"],
+    "freeCourse": {
+      "title": "Hugging Face NLP Course",
+      "platform": "Hugging Face",
+      "url": "https://huggingface.co/learn/nlp-course/chapter1/1"
+    },
+    "paidCourse": {
+      "title": "Natural Language Processing Specialization",
+      "platform": "Coursera (DeepLearning.AI)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/natural-language-processing"
+    }
+  },
+  "Pandas & NumPy": {
+    "subtopics": ["Vectorized array operations & broadcasting", "DataFrame indexing, joins & groupby aggregations", "Handling missing values & time-series data"],
+    "freeCourse": {
+      "title": "Pandas Interactive Micro-Course",
+      "platform": "Kaggle Learn",
+      "url": "https://www.kaggle.com/learn/pandas"
+    },
+    "paidCourse": {
+      "title": "Introduction to Data Science in Python",
+      "platform": "Coursera (University of Michigan)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/python-data-analysis"
+    }
+  },
+  "Data Visualization": {
+    "subtopics": ["Choosing chart encodings for distributions & trends", "Interactive dashboards & cohort filtering", "Visual hierarchy & color accessibility"],
+    "freeCourse": {
+      "title": "Data Visualization Track",
+      "platform": "Kaggle Learn",
+      "url": "https://www.kaggle.com/learn/data-visualization"
+    },
+    "paidCourse": {
+      "title": "Data Visualization with Tableau Specialization",
+      "platform": "Coursera (UC Davis)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/data-visualization"
+    }
+  },
+  "Statistics": {
+    "subtopics": ["Probability distributions & Central Limit Theorem", "Hypothesis testing, p-values & confidence intervals", "A/B testing & regression analysis"],
+    "freeCourse": {
+      "title": "Statistics and Probability",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/news/tag/statistics/"
+    },
+    "paidCourse": {
+      "title": "Introduction to Statistics",
+      "platform": "Coursera (Stanford University)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/stanford-statistics"
+    }
+  },
+  "Apache Spark": {
+    "subtopics": ["Spark SQL, DataFrames & Catalyst optimizer", "Partitioning, bucketing & broadcast joins", "Structured Streaming & fault tolerance"],
+    "freeCourse": {
+      "title": "Apache Spark Official Quickstart Guide",
+      "platform": "Apache Spark Docs",
+      "url": "https://spark.apache.org/docs/latest/quick-start.html"
+    },
+    "paidCourse": {
+      "title": "Big Data Analysis with Scala and Spark",
+      "platform": "Coursera (EPFL)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/scala-spark-big-data"
+    }
+  },
+  "Airflow": {
+    "subtopics": ["DAG scheduling, Operators & TaskFlow API", "Retries, SLAs & backfilling", "Sensor patterns & idempotent tasks"],
+    "freeCourse": {
+      "title": "Apache Airflow Official Fundamentals Tutorial",
+      "platform": "Apache Airflow Docs",
+      "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html"
+    },
+    "paidCourse": {
+      "title": "ETL and Data Pipelines with Shell, Airflow and Kafka",
+      "platform": "Coursera (IBM)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/learn/etl-and-data-pipelines-shell-airflow-kafka"
+    }
+  },
+  "Data Warehousing": {
+    "subtopics": ["Star & snowflake dimensional modeling", "Columnar storage, partitioning & clustering", "Incremental ELT & slowly changing dimensions"],
+    "freeCourse": {
+      "title": "Design a Data Warehouse Schema",
+      "platform": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/training/modules/design-multidimensional-schema-to-optimize-analytical-workloads/"
+    },
+    "paidCourse": {
+      "title": "Data Warehousing for Business Intelligence",
+      "platform": "Coursera (University of Colorado)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/data-warehousing"
+    }
+  },
+  "Kafka": {
+    "subtopics": ["Topics, partitions, brokers & consumer groups", "Offset management & delivery guarantees", "Event schema evolution & streaming"],
+    "freeCourse": {
+      "title": "Apache Kafka Official Quickstart",
+      "platform": "Apache Kafka Docs",
+      "url": "https://kafka.apache.org/quickstart"
+    },
+    "paidCourse": {
+      "title": "Apache Kafka Series - Learn Apache Kafka for Beginners",
+      "platform": "Udemy",
+      "priceNote": "Paid Course",
+      "url": "https://www.udemy.com/course/apache-kafka/"
+    }
+  },
+  "System Design": {
+    "subtopics": ["Load balancing, caching & database sharding", "Consistent hashing, queues & rate limiting", "CAP theorem, latency & availability trade-offs"],
+    "freeCourse": {
+      "title": "The System Design Primer",
+      "platform": "GitHub (donnemartin)",
+      "url": "https://github.com/donnemartin/system-design-primer"
+    },
+    "paidCourse": {
+      "title": "Mastering the System Design Interview",
+      "platform": "Udemy",
+      "priceNote": "Paid Course",
+      "url": "https://www.udemy.com/course/system-design-interview-prep/"
+    }
+  },
+  "Automated Testing": {
+    "subtopics": ["Unit, integration & end-to-end test pyramids", "Fixtures, mocking & parameterized tests", "Coverage enforcement in CI pipelines"],
+    "freeCourse": {
+      "title": "Quality Assurance and Testing Certification",
+      "platform": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/quality-assurance/"
+    },
+    "paidCourse": {
+      "title": "Software Testing and Automation Specialization",
+      "platform": "Coursera (University of Minnesota)",
+      "priceNote": "Paid Certificate",
+      "url": "https://www.coursera.org/specializations/software-testing-automation"
+    }
+  }
+}
